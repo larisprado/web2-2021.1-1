@@ -13,4 +13,27 @@ class ClienteController extends Controller
         $clientes = Cliente::all();
         echo $clientes;
     }
+
+    public function index()
+    {
+        $clientes = Cliente::all();
+
+        return view('clientes.index', ['clientes' => $clientes]);
+    }
+
+    public function create()
+    {
+        return view('clientes.create');
+    }
+
+    public function store(Request $request)
+    {
+        $cliente = new Cliente();
+        $cliente->nome = $request->nome;
+        $cliente->endereco = $request->endereco;
+        $cliente->debito = $request->debito;
+        $cliente->save();
+
+        return redirect('clientes/');
+    }
 }
