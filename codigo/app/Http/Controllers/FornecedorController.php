@@ -36,4 +36,19 @@ class FornecedorController extends Controller
 
         return redirect('fornecedor/');
     }
+    public function edit($id){
+        $fornecedor = Fornecedor::findorFail($id);
+        return view('fornecedores.edit', ['fornecedor'=>$fornecedor]);
+    }
+
+    public function update(Request $request){
+        Fornecedor::find($request->id)->update($request->except('_method'));
+        return redirect('fornecedor/')->with('msg', 'Fornecedor atualizado');
+    }
+    
+    public function destroy($id){
+        Fornecedor::findorFail($id)->delete();
+        return redirect('fornecedor/')->with('msg', 'Fornecedor excluído com sucesso');
+    }
+
 }
