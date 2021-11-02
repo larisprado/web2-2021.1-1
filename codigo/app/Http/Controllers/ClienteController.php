@@ -7,12 +7,12 @@ use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
-    //
-    // public function show()
-    // {
-    //     $clientes = Cliente::all();
-    //     echo $clientes;
-    // }
+    
+    public function show()
+    {
+        $clientes = Cliente::all();
+        echo $clientes;
+    }
 
     public function index()
     {
@@ -20,19 +20,7 @@ class ClienteController extends Controller
 
         return view('clientes.index', ['clientes' => $clientes]);
     }
-
-    public function show($id)
-    {
-        if($id)
-        {
-            $clientes = Cliente::where('id', $id)->get();
-        }else{
-            $clientes = Cliente::all();
-        }
-        return view('clientes.show', ['clientes'=>$clientes]);
-    }
-
-    
+   
 
     public function create()
     {

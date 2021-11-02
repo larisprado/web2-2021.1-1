@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Venda;
 class VendaController extends Controller
 {
-    //
+    
     public function show(){
         $vendas = Venda::all();
         echo $vendas;
@@ -14,7 +14,7 @@ class VendaController extends Controller
 
     public function index(){
         $vendas = Venda::all();
-        return view('venda.index', ['vendas'=>$entradas]);
+        return view('venda.index', ['vendas'=>$vendas]);
     }
     public function create(){
         return view('venda.create'); 
