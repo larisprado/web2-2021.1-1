@@ -19,23 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/clientes', [ClienteController::class, 'show']);
-
-// Route::get('/fornecedor', [FornecedorController::class, 'show']);
-
-// Route::get('/', [FornecedorController::class, 'index']);
-// Route::get('/create', [FornecedorController::class, 'create']);
-// Route::post('/store', [FornecedorController::class, 'store']);
-
-Route::prefix('clientes')->group(function () {
-    Route::get('/show', [ClienteController::class, 'show']);
-    Route::get('/', [ClienteController::class, 'index']);
-    Route::get('/create', [ClienteController::class, 'create']);
-    Route::post('/store', [ClienteController::class, 'store']);
-    Route::get('/edit/{id}', [ClienteController::class, 'edit']);
-    Route::put('/update/{id}', [ClienteController::class, 'update'])->name('update');
-    Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('delete');
-});
+// Route::prefix('clientes')->group(function () {
+Route::get('/show', [ClienteController::class, 'show']);
+Route::get('/', [ClienteController::class, 'index']);
+// Route::get('/create', [ClienteController::class, 'create']);
+Route::post('/store', [ClienteController::class, 'store']);
+// Route::get('/edit/{id}', [ClienteController::class, 'edit']);
+Route::get('/clientes/create',[ClienteController::class, 'create'])->name('clientes.create');
+Route::get('/clientes/edit',[ClienteController::class, 'edit'])->name('clientes.edit');
+Route::put('/clientes/update/{id}',[ClienteController::class, 'update'])->name('clientes.update');
+// Route::put('/update/{id}', [ClienteController::class, 'update'])->name('update');
+Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('delete');
+// });
 
 Route::prefix('fornecedor')->group(function () {
     Route::get('/show', [FornecedorController::class, 'show']);
