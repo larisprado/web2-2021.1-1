@@ -28,7 +28,7 @@ class EntradaController extends Controller
         $entrada->datacompra = $request->datacompra;
         $entrada->save();
 
-        return redirect('/entradas/index');
+        return redirect('/entradas/');
     }
 
     

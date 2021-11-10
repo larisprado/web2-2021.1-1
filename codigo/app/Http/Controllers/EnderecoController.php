@@ -18,20 +18,23 @@ class EnderecoController extends Controller
         return view('endereco.index', ['enderecos'=>$enderecos]);
     }
     
-    public function create(){
-        return view('endereco.create'); 
+    public function create($id){
+        return view('endereco.create', ['cliente_id'=>$id]); 
     }
 
     public function store(Request $request)
     {
-        $endereco = new Endereco();
+        $endereco = new endereco();
         $endereco->logradouro = $request->logradouro;
         $endereco->bairro = $request->bairro;
         $endereco->cidade = $request->cidade;
         $endereco->uf = $request->uf;
         $endereco->cliente_id = $request->cliente_id;
         $endereco->save();
-        return redirect('/endereco/index');
+
+        return redirect('/endereco/');
+        // return redirect()->route('clienteshow', ['id' => 5]);
+
     }
 
     
