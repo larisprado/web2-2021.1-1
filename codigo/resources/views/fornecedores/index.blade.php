@@ -5,7 +5,7 @@
 @section('conteudo')
 
 <div id="form">
-    <h2 > FORNECEDORES: </h2>
+    <h2> FORNECEDORES: </h2>
     <table class="table">
         <thead>
             <tr>
@@ -20,15 +20,17 @@
                 <th> {{ $fornecedor->endereco }} </th>
                 <th> {{ $fornecedor->debito }} </th>
                 <th> <a href="fornecedor/edit/{{$fornecedor->id}}">Editar</a> </th>
-                <th> <form action="fornecedor/{{$fornecedor->id}}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input type="submit" value="Deletar">
-            </form> </th>
+                <th>
+                    <form action="fornecedor/{{$fornecedor->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Deletar">
+                    </form>
+                </th>
             </tr>
-       
-    @endforeach
-    </thead>
-    </table>    
+
+            @endforeach
+        </thead>
+    </table>
 </div>
 @endsection('conteudo')

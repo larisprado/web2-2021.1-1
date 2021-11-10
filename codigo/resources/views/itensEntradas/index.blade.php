@@ -1,3 +1,6 @@
+
+
+
 <h1>ItensEntradas Cadastradas: </h1>
 @foreach ($itensentradas as $itensentrada)
 
