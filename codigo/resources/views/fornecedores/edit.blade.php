@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
-@section('titulo', 'EDITAR CLIENTES')
+@section('titulo', 'EDITAR FORNECEDORES')
 
 @section('conteudo')
 
-    <form action="../update/{{$fornecedor->id}}" method="POST">
+    <form action="{{route('fornecedor.update', ['id' => $cliente->id])}}" method="POST">
         @csrf
         @method('PUT')
         <label for="">Nome Fornecedor</label>

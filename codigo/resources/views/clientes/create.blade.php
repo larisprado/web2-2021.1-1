@@ -5,6 +5,8 @@
 @section('conteudo')
 
   <div id="form">
+    <h2> ADICIONAR NOVO CLIENTE: </h2>
+    <br>
     <form method="post" action="{{route('clientes.store')}}">
         @csrf
         <label for="nome">Nome</label>

@@ -8,7 +8,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS local -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{{ asset ('css/style.css')}}">
     <script src="../js/script.js"></script>
 
     <title>@yield('titulo')</title>
@@ -23,11 +23,11 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col"><a href="">Clientes</a></th>
-                        <th><a href="">Produtos</a></th>
-                        <th><a href="">Fornecederos</a></th>
-                        <th><a href="">Entradas</a></th>
-                        <th><a href="">Vendas</a></th>
+                        <th scope="col"><a href="clientes/">Clientes</a></th>
+                        <th><a href="produtos/">Produtos</a></th>
+                        <th><a href="fornecedor/">Fornecedoros</a></th>
+                        <th><a href="entradas/">Entradas</a></th>
+                        <th><a href="vendas/">Vendas</a></th>
                     </tr>
                 </thead>
             </table>

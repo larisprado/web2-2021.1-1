@@ -5,19 +5,32 @@
 @section('conteudo')
 
 <div id="form">
-    @foreach ($clientes as $cliente)
-    <ul>
-        <li>Nome : {{ $cliente->nome }}</li>
-        <li>Endereço: {{ $cliente->endereco }}</li>
-        <li>Débito: {{ $cliente->debito }}</li>
-        <a href="{{route('clientes.edit', ['id' => $cliente->id])}}">Editar</a>
+    <h2> CLIENTES: </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color: blue;"> NOME: </th>
+                <th style="color: blue;"> ENDEREÇO: </th>
+                <th style="color: blue;"> DÉBITO: </th>
+            </tr>
+            <tr>
+                @foreach ($clientes as $cliente)
 
-        <form action="{{route('clientes.delete', ['id' => $cliente->id])}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="Deletar">
-        </form>
-    </ul>
-    @endforeach
+                <th> {{ $cliente->nome }} </th>
+                <th> {{ $cliente->endereco }} </th>
+                <th> {{ $cliente->debito }} </th>
+                <th> <a href="{{route('clientes.edit', ['id' => $cliente->id])}}">Editar</a> </th>
+                <th>
+                    <form action="{{route('clientes.delete', ['id' => $cliente->id])}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Deletar">
+                    </form>
+                </th>
+            </tr>
+
+            @endforeach
+        </thead>
+    </table>
 </div>
 @endsection('conteudo')
