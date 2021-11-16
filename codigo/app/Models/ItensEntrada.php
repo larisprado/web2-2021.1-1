@@ -10,4 +10,8 @@ class ItensEntrada extends Model
     use HasFactory;
     protected $table = "itensentradas";
     protected $fillable = ['identrada','quantidade'];
+
+    public function Entrada(){
+        return $this->belongsTo(Entrada::class, 'identrada','id');
+    }
 }

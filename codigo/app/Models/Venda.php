@@ -12,4 +12,8 @@ class Venda extends Model
     protected $table = "vendas";
 
     protected $fillable = ['idcliente','valortotal','datavenda'];
+
+    function itenvendas(){
+        return $this->hasMany(ItensVenda::class, 'idvenda', 'id');
+    }
 }

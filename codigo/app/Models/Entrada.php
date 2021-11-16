@@ -12,4 +12,8 @@ class Entrada extends Model
     protected $table = "entradas";
 
     protected $fillable = ['idfornecedor','valortotal','datacompra'];
+
+    function itensentrada(){
+        return $this->hasMany(ItensEntrada::class, 'identrada', 'id');
+    }
 }
