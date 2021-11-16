@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Http\Requests\StoreClienteRequest;
 class ProdutoController extends Controller
 {
     //
@@ -20,7 +21,7 @@ class ProdutoController extends Controller
         return view('produto.create'); 
     }
 
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
         $produto = new Produto();
         $produto->nome = $request->nome;

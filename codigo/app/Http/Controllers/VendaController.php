@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Venda;
+use App\Http\Requests\StoreClienteRequest;
 class VendaController extends Controller
 {
     
@@ -20,7 +21,7 @@ class VendaController extends Controller
         return view('venda.create'); 
     }
 
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
         $venda = new Venda();
         $venda->idcliente = $request->idcliente;

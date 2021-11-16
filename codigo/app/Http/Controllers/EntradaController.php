@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entrada;
+use App\Http\Requests\StoreClienteRequest;
 class EntradaController extends Controller
 {
     //
@@ -20,7 +21,7 @@ class EntradaController extends Controller
         return view('entrada.create'); 
     }
 
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
         $entrada = new Entrada();
         $entrada->idfornecedor = $request->idfornecedor;
