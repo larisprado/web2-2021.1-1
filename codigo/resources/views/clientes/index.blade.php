@@ -5,10 +5,13 @@
 @section('conteudo')
 
 <div id="form">
-    <h2> CLIENTES: </h2>
-    <table class="table">
+    <h3> CLIENTES: </h3>
+</br>
+<div id="container">
+    <table class="table mb-5">
         <thead>
             <tr>
+                <th style="color: blue;">#</th>
                 <th style="color: blue;"> NOME: </th>
                 <th style="color: blue;"> ENDEREÇO: </th>
                 <th style="color: blue;"> DÉBITO: </th>
@@ -16,10 +19,11 @@
             <tr>
                 @foreach ($clientes as $cliente)
 
+                <th scope="col">{{ $cliente->id }}</th>
                 <th> {{ $cliente->nome }} </th>
                 <th> {{ $cliente->endereco }} </th>
                 <th> {{ $cliente->debito }} </th>
-                <th> <a href="{{route('clientes.edit', ['id' => $cliente->id])}}">Editar</a> </th>
+                <th> <a href="{{route('clientes.edit', ['id' => $cliente->id])}}"> Editar</a> </th>
                 <th>
                     <form action="{{route('clientes.delete', ['id' => $cliente->id])}}" method="POST">
                         @csrf
@@ -32,5 +36,6 @@
             @endforeach
         </thead>
     </table>
+</div>
 </div>
 @endsection('conteudo')
