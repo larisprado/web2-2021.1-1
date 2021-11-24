@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entrada;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreEntradaRequest;
 class EntradaController extends Controller
 {
     //
@@ -21,7 +21,7 @@ class EntradaController extends Controller
         return view('entrada.create'); 
     }
 
-    public function store(StoreClienteRequest $request)
+    public function store(StoreEntradaRequest $request)
     {
         $entrada = new Entrada();
         $entrada->idfornecedor = $request->idfornecedor;
@@ -38,7 +38,7 @@ class EntradaController extends Controller
         return view('entrada.edit', ['entrada'=>$entrada]);
     }
 
-    public function update(Request $request){
+    public function update(StoreEntradaRequest $request){
         Entrada::find($request->id)->update($request->except('_method'));
         return redirect('entrada/index')->with('msg', 'entrada atualizada');
     }

@@ -36,7 +36,6 @@ class ClienteController extends Controller
         $cliente->save();
 
         return redirect('clientes/');
-        // return redirect('index');
 
     }
 
@@ -58,7 +57,7 @@ class ClienteController extends Controller
         return view('clientes.edit', ['cliente'=>$cliente]);
     }
 
-    public function update(Request $request)
+    public function update(StoreClienteRequest $request)
     {
         Cliente::find($request->id)->update($request->except('_method'));
         return redirect('clientes/')->with('msg', 'Cliente atualizado');

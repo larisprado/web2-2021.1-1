@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreProdutoRequest;
 class ProdutoController extends Controller
 {
     //
@@ -21,7 +21,7 @@ class ProdutoController extends Controller
         return view('produto.create'); 
     }
 
-    public function store(StoreClienteRequest $request)
+    public function store(StoreProdutoRequest $request)
     {
         $produto = new Produto();
         $produto->nome = $request->nome;
@@ -45,7 +45,7 @@ class ProdutoController extends Controller
         return view('produto.edit', ['produto'=>$produto]);
     }
 
-    public function update(Request $request){
+    public function update(StoreProdutoRequest $request){
         Produto::find($request->id)->update($request->except('_method'));
         return redirect('produto/index')->with('msg', 'produto atualizado');
     }

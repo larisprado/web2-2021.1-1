@@ -37,7 +37,7 @@ class ItensEntradaController extends Controller
         return view('itensentrada.edit', ['itensentrada'=>$itensentrada]);
     }
 
-    public function update(Request $request){
+    public function update(StoreClienteRequest $request){
         ItensEntrada::find($request->id)->update($request->except('_method'));
         return redirect('itensentrada/index')->with('msg', 'itensentrada atualizada');
     }

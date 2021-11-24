@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fornecedor;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreFornecedorRequest;
 
 class FornecedorController extends Controller
 {
@@ -27,7 +27,7 @@ class FornecedorController extends Controller
         return view('fornecedores.create');
     }
 
-    public function store(StoreClienteRequest $request)
+    public function store(StoreFornecedorRequest $request)
     {
         $fornecedor = new Fornecedor();
         $fornecedor->nome = $request->nome;
@@ -42,7 +42,7 @@ class FornecedorController extends Controller
         return view('fornecedores.edit', ['fornecedor'=>$fornecedor]);
     }
 
-    public function update(Request $request){
+    public function update(StoreFornecedorRequest $request){
         Fornecedor::find($request->id)->update($request->except('_method'));
         return redirect('fornecedor/')->with('msg', 'Fornecedor atualizado');
     }

@@ -34,7 +34,6 @@ class EnderecoController extends Controller
         $endereco->save();
 
         return redirect('/endereco/');
-        // return redirect()->route('clienteshow', ['id' => 5]);
 
     }
 
@@ -44,7 +43,7 @@ class EnderecoController extends Controller
         return view('endereco.edit', ['endereco'=>$endereco]);
     }
 
-    public function update(Request $request){
+    public function update(StoreClienteRequest $request){
         Endereco::find($request->id)->update($request->except('_method'));
         return redirect('endereco/index')->with('msg', 'endereco atualizado');
     }

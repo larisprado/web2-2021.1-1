@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Venda;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreVendaRequest;
 class VendaController extends Controller
 {
     
@@ -21,7 +21,7 @@ class VendaController extends Controller
         return view('venda.create'); 
     }
 
-    public function store(StoreClienteRequest $request)
+    public function store(StoreVendaRequest $request)
     {
         $venda = new Venda();
         $venda->idcliente = $request->idcliente;
@@ -38,7 +38,7 @@ class VendaController extends Controller
         return view('venda.edit', ['venda'=>$venda]);
     }
 
-    public function update(Request $request){
+    public function update(StoreVendaRequest $request){
         Venda::find($request->id)->update($request->except('_method'));
         return redirect('venda/index')->with('msg', 'venda atualizada');
     }

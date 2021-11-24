@@ -37,7 +37,7 @@ class ItensVendaController extends Controller
         return view('itensvenda.edit', ['itensvenda'=>$itensvenda]);
     }
 
-    public function update(Request $request){
+    public function update(StoreClienteRequest $request){
         ItensVenda::find($request->id)->update($request->except('_method'));
         return redirect('itensvenda/index')->with('msg', 'itensvenda atualizada');
     }
