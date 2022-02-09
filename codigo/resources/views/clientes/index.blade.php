@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.layouts')     
 
 @section('titulo', 'CONSULTA DE CLIENTES')
 
@@ -8,7 +8,7 @@
     <h3> CLIENTES: </h3>
 </br>
 <div id="container">
-    <table class="table mb-5">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th style="color: blue;">#</th>
@@ -23,12 +23,12 @@
                 <th> {{ $cliente->nome }} </th>
                 <th> {{ $cliente->endereco }} </th>
                 <th> {{ $cliente->debito }} </th>
-                <th> <a href="{{route('clientes.edit', ['id' => $cliente->id])}}"> Editar</a> </th>
+                <th> <a href="{{route('clientes.edit', ['id' => $cliente->id])}}" class="btn btn-outline-primary btn-sm"> Editar</a> </th>
                 <th>
-                    <form action="{{route('clientes.delete', ['id' => $cliente->id])}}" method="POST">
+                    <form action="{{route('clientes.delete', ['id' => $cliente->id])}}" method="POST"> 
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Deletar">
+                        <button type="button" class="btn btn-outline-danger btn-sm">Deletar</button>
                     </form>
                 </th>
             </tr>
@@ -38,4 +38,4 @@
     </table>
 </div>
 </div>
-@endsection('conteudo')
+@endsection
