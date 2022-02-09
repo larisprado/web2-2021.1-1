@@ -1,9 +1,9 @@
-#layout
+/* #layout
 {
     background-color: rgb(216, 214, 224);
     text-align: center;
     font: 85% arial, helvetica, sans-serif;
-}
+} */
 
 #container
 {
@@ -19,9 +19,9 @@
     align-items: center;
     justify-content: center;
 }
-#nav
+/* #nav
 {
-    /* background: yellowgreen; */
+    background: yellowgreen; 
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
@@ -34,14 +34,7 @@
     margin: 15px 15px 15px 15px; 
 }
 
-#footer{
-    background: #f1f1dc;
-    padding: 5px;
-    bottom: 0;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-}
+
 
 a:link, a:visited {
 	text-decoration: none
@@ -51,7 +44,8 @@ a:hover {
 	}
 a:active {
 	text-decoration: none
-	}
+	} */
+
 /* 
 #navbar-nav
 {
@@ -59,21 +53,29 @@ a:active {
     text-align: center;
 } */
 
+#footer{
+    background: #f1f1dc;
+    padding: 5px;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
 
 .title {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #07075f;
+    /* background-color: #03033f; */
     width: 100%;
     height: 15%;
 }
+
 
 .title a {
     text-decoration: none;
     margin: 20px 30px;
     /* font-weight: bold; */
-    color: #fff;
     transition: .2s;    
     font-style: inherit;
     font-size: 134%;
@@ -84,21 +86,22 @@ a:active {
 }
 
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica;
     color: #b0b0e2;
     border: none;
-  }
+  } */
   
   body {
-    background-image: url('../img/background.jpg');
+    /*background-image: url('../img/background.jpg');*/
+    background: rgb(224, 224, 207);
     background-size: cover;
     background-position-y: -100px;
   }
-  
+/*   
   textarea:focus, input:focus{
     outline: none;
   }
@@ -108,10 +111,10 @@ a:active {
   }
   
   a:hover {
-    color: #08558B;
+    color: #edf3f8;
   }
   
-  /* container login */
+  container login 
   #login-container {
     background-color: #FFF;
     margin-left: auto;
@@ -123,7 +126,7 @@ a:active {
     text-align: center;
   }
   
-  /* formulário */
+   formulário 
   form {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -174,7 +177,7 @@ a:active {
     transition: .5s;
   }
   
-  /* redes sociais */
+   redes sociais 
   #social-container {
     margin-bottom: 20px;
   }
@@ -200,7 +203,7 @@ a:active {
     background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
   }
   
-  /* registrar */
+   registrar 
   #register-container p {
     margin-bottom: 10px;
-  }
+  } */
