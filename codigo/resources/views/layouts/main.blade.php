@@ -20,15 +20,52 @@
 
 <body>
     <div id="container">
-                    <div class="title">
+        <div class="title">
 
-                        <h4 style="font-size: 200%;" ><i class="fa fa-sitemap" ></i> Socape</h4>
+            <a style="font-size: 280%; color:slategrey" class="fa fa-sitemap" href="{{route('teste')}}"> Socape</a>
+            <!-- <a class="fa fa-users" href="/projeto/public/"> Início</a> -->
+            <a class="fa fa-shopping-cart nav-link" href="{{route('venda.index')}}"> Vendas</a>
+            <a class="fa fa-area-chart nav-link " href="{{route('fornecedor.index')}}"> Entradas</a>
+            <a class="fa fa-area-chart nav-link dropdown-toggle" href="{{route('entrada.index')}}" role="button" data-bs-toggle="dropdown"> Consultas</a>
+
+            <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a href="{{route('clientes.index')}}">CLIENTE</a></li>
+                <li><a href="{{route('fornecedor.index')}}">FORNECEDOR</a></li>
+                <li><a href="{{route('produto.index')}}">PRODUTO</a></li>
+                <li><a href="{{route('carro.index')}}">CARRO</a></li>
+                <li><a href="{{route('fornecedor.index')}}">LOCALIZAÇÃO</a></li>
+                <li><a href="{{route('fornecedor.index')}}">VÁLVULA</a></li>
+                <li><a href="{{route('fornecedor.index')}}">CATEGORIA</a></li>
+                <li><a href="{{route('fornecedor.index')}}">MOTOR</a></li>
+                <li><a href="{{route('fornecedor.index')}}">FABRICAÇÃO</a></li>
+                <li><a href="{{route('fornecedor.index')}}">MARCA</a></li>
+            </ul>
+            
+            <!-- <h4 style="font-size: 200%;" ><i class="fa fa-sitemap" ></i> Socape</h4>
                         <a class="fa fa-users" href="{{route('clientes.index')}}"> Clientes</a>
                         <a class="fa fa-shopping-cart" href="{{route('produto.index')}}"> Produtos</a>
                         <a class="fa fa-user-plus" href="{{route('fornecedor.index')}}"> Fornecedores</a>
                         <a class="fa fa-area-chart" href="{{route('entrada.index')}}"> Entradas</a>
-                        <a class="fa fa-shopping-cart" href="{{route('venda.index')}}"> Vendas</a>
-                    </div>
+                        <a class="fa fa-shopping-cart" href="{{route('venda.index')}}"> Vendas</a> -->
+
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="font-size: 80%;" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-user-o"></i> Larissa Prado</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end" style="margin: 0%; color:slategrey; font-size:40%">
+                        <li>
+                            <h6 class="dropdown-header">Olá, Larissa Prado!</h6>
+                        </li>
+                        <!-- <li>
+                        <hr class="dropdown-divider">
+                    </li> -->
+                        <li><a class="dropdown-item" href="">PERFIL</a></li>
+                        <li><a class="dropdown-item" href="">SAIR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </ul>
+        </div>
         <div id="conteudo">
             @yield('conteudo')
         </div>
