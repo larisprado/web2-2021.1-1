@@ -11,9 +11,9 @@ class Cliente extends Model
     
     protected $table = "clientes";
 
-    // protected $fillable = ['nome', 'endereco', 'debito'];
+    protected $fillable = ['nome', 'endereco', 'debito'];
 
-    protected $guarded = [];
+    // protected $guarded = [];
 
     function endereco(){
         return $this->hasMany(Endereco::class, 'cliente_id', 'id');
