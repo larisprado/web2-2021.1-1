@@ -21,15 +21,15 @@
 <body >
   <div id="layout">
     <div id="container">
-                    <div class="title">
+            <div class="title">
 
-                        <h4 style="font-size: 200%;" ><i class="fa fa-sitemap" ></i> Socape</h4>
-                        <a class="fa fa-users" href="{{route('clientes.index')}}"> Clientes</a>
-                        <a class="fa fa-shopping-cart" href="{{route('produto.index')}}"> Produtos</a>
-                        <a class="fa fa-user-plus" href="{{route('fornecedor.index')}}"> Fornecedores</a>
-                        <a class="fa fa-area-chart" href="{{route('entrada.index')}}"> Entradas</a>
-                        <a class="fa fa-shopping-cart" href="{{route('venda.index')}}"> Vendas</a>
-                    </div>
+                <a style="font-size: 200%;" href="{{route('teste')}}"><i class="fa fa-sitemap" ></i> Socape</a>
+                <a class="fa fa-users" href="{{route('clientes.index')}}"> Clientes</a>
+                <a class="fa fa-shopping-cart" href="{{route('produto.index')}}"> Produtos</a>
+                <a class="fa fa-user-plus" href="{{route('fornecedor.index')}}"> Fornecedores</a>
+                <a class="fa fa-area-chart" href="{{route('entrada.index')}}"> Entradas</a>
+                <a class="fa fa-shopping-cart" href="{{route('venda.index')}}"> Vendas</a>
+            </div>
         <div id="conteudo">
             @yield('conteudo')
         </div>
