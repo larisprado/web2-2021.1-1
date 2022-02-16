@@ -19,12 +19,12 @@
                 <th> {{ $fornecedor->nome }} </th>
                 <th> {{ $fornecedor->endereco }} </th>
                 <th> {{ $fornecedor->debito }} </th>
-                <th> <a href="fornecedor/edit/{{$fornecedor->id}}">Editar</a> </th>
+                <th> <a href="fornecedor/edit/{{$fornecedor->id}}"  class="btn btn-outline-primary btn-sm">Editar</a> </th>
                 <th>
                     <form action="fornecedor/{{$fornecedor->id}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Deletar">
+                        <button type="button" class="btn btn-outline-danger btn-sm">Deletar</button>
                     </form>
                 </th>
             </tr>
