@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Endereco;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreEnderecoRequest;
 
 class EnderecoController extends Controller
 {
@@ -23,7 +23,7 @@ class EnderecoController extends Controller
         return view('endereco.create', ['cliente_id'=>$id]); 
     }
 
-    public function store(StoreClienteRequest $request)
+    public function store(StoreEnderecoRequest $request)
     {
         $endereco = new endereco();
         $endereco->logradouro = $request->logradouro;
@@ -43,7 +43,7 @@ class EnderecoController extends Controller
         return view('endereco.edit', ['endereco'=>$endereco]);
     }
 
-    public function update(StoreClienteRequest $request){
+    public function update(StoreEnderecoRequest $request){
         Endereco::find($request->id)->update($request->except('_method'));
         return redirect('endereco/index')->with('msg', 'endereco atualizado');
     }

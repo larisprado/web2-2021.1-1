@@ -32,7 +32,8 @@ class FornecedorController extends Controller
         $fornecedor = new Fornecedor();
         $fornecedor->nome = $request->nome;
         $fornecedor->endereco = $request->endereco;
-        $fornecedor->debito = $request->debito;
+        $fornecedor->telefone = $request->telefone;
+        $fornecedor->cnpj = $request->cnpj;
         $fornecedor->save();
 
         return redirect('fornecedor/');

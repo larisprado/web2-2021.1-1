@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ItensEntrada;
-use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\StoreItensEntradaRequest;
 class ItensEntradaController extends Controller
 {
-    //
+    
     public function show(){
         $entradas = ItensEntrada::all();
         echo $entradas;
@@ -21,11 +21,18 @@ class ItensEntradaController extends Controller
         return view('entrada.create'); 
     }
 
-    public function store(StoreClienteRequest $request)
+    //tabela (identrada, idproduto, precocompra, quantidade, unidade, ipi, frete, icms)
+    public function store(StoreItensEntradaRequest $request)
     {
         $itensentrada = new ItensEntrada();
         $itensentrada->identrada = $request->identrada;
+        $itensentrada->idproduto = $request->idproduto;
+        $itensentrada->precocompra = $request->precocompra;
         $itensentrada->quantidade = $request->quantidade;
+        $itensentrada->unidade = $request->unidade;
+        $itensentrada->ipi = $request->ipi;
+        $itensentrada->frete = $request->frete;
+
         $itensentrada->save();
 
         return redirect('/entradas/index');
@@ -37,7 +44,7 @@ class ItensEntradaController extends Controller
         return view('itensentrada.edit', ['itensentrada'=>$itensentrada]);
     }
 
-    public function update(StoreClienteRequest $request){
+    public function update(StoreItensEntradaRequest $request){
         ItensEntrada::find($request->id)->update($request->except('_method'));
         return redirect('itensentrada/index')->with('msg', 'itensentrada atualizada');
     }
